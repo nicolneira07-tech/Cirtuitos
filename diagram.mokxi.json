@@ -9,8 +9,8 @@
         "color": "green"
       },
       "x": 0,
-      "y": -60,
-      "rot": 0
+      "y": -20,
+      "rot": 90
     },
     {
       "id": "led2",
@@ -19,8 +19,8 @@
         "color": "red"
       },
       "x": 0,
-      "y": -260,
-      "rot": 0
+      "y": -220,
+      "rot": 90
     },
     {
       "id": "led3",
@@ -29,8 +29,8 @@
         "color": "yellow"
       },
       "x": 0,
-      "y": -140,
-      "rot": 0
+      "y": -100,
+      "rot": 90
     },
     {
       "id": "r2",
@@ -136,7 +136,7 @@
       "bends": [
         {
           "x": 80,
-          "y": -200
+          "y": -180
         }
       ]
     },
@@ -148,7 +148,7 @@
       "bends": [
         {
           "x": 80,
-          "y": -80
+          "y": -60
         }
       ]
     },
@@ -160,7 +160,7 @@
       "bends": [
         {
           "x": 80,
-          "y": 0
+          "y": 20
         }
       ]
     },
@@ -194,9 +194,9 @@
     },
     "mega25602": {
       "files": {
-        "semaforo.h": "int rojo = 10;\nint amarillo = 9;\nint verde = 8;\n\nvoid setup() {\n  pinMode(rojo, OUTPUT);\n  pinMode(amarillo, OUTPUT);\n  pinMode(verde, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(verde, HIGH);\n  delay(5000);\n  digitalWrite(verde, LOW);\n\n  digitalWrite(amarillo, HIGH);\n  delay(2000);\n  digitalWrite(amarillo, LOW);\n\n  digitalWrite(rojo, HIGH);\n  delay(5000);\n  digitalWrite(rojo, LOW);\n}\n"
+        "semaforo.ino": "int rojo = 10;\nint amarillo = 9;\nint verde = 8;\n\nvoid setup() {\n  pinMode(rojo, OUTPUT);\n  pinMode(amarillo, OUTPUT);\n  pinMode(verde, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(verde, HIGH);\n  delay(6000);\n  digitalWrite(verde, LOW);\n\n  digitalWrite(amarillo, HIGH);\n  delay(3000);\n  digitalWrite(amarillo, LOW);\n\n  digitalWrite(rojo, HIGH);\n  delay(6000);\n  digitalWrite(rojo, LOW);\n}\n"
       },
-      "main": "semaforo.h"
+      "main": "semaforo.ino"
     }
   }
 }
