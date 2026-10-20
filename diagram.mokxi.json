@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "name": "Untitled project",
+  "parts": [
+    {
+      "id": "led1",
+      "type": "led",
+      "props": {
+        "color": "green"
+      },
+      "x": 0,
+      "y": -60,
+      "rot": 0
+    },
+    {
+      "id": "led2",
+      "type": "led",
+      "props": {
+        "color": "red"
+      },
+      "x": 0,
+      "y": -260,
+      "rot": 0
+    },
+    {
+      "id": "led3",
+      "type": "led",
+      "props": {
+        "color": "yellow"
+      },
+      "x": 0,
+      "y": -140,
+      "rot": 0
+    },
+    {
+      "id": "r2",
+      "type": "resistor",
+      "props": {
+        "value": 330,
+        "power": "1/4 W"
+      },
+      "x": -120,
+      "y": -220,
+      "rot": 0
+    },
+    {
+      "id": "r3",
+      "type": "resistor",
+      "props": {
+        "value": 330,
+        "power": "1/4 W"
+      },
+      "x": -120,
+      "y": -20,
+      "rot": 0
+    },
+    {
+      "id": "r4",
+      "type": "resistor",
+      "props": {
+        "value": 330,
+        "power": "1/4 W"
+      },
+      "x": -120,
+      "y": -100,
+      "rot": 0
+    },
+    {
+      "id": "mega25602",
+      "type": "mega2560",
+      "props": {},
+      "x": -1140,
+      "y": -140,
+      "rot": 90
+    },
+    {
+      "id": "bb1",
+      "type": "breadboard-half",
+      "props": {},
+      "x": -400,
+      "y": -320,
+      "rot": 90,
+      "locked": true
+    }
+  ],
+  "wires": [
+    {
+      "id": "w1",
+      "from": "mega25602:10",
+      "to": "bb1:a12",
+      "color": "#e14b4b",
+      "bends": [
+        {
+          "x": -380,
+          "y": -100
+        },
+        {
+          "x": -380,
+          "y": -200
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "from": "mega25602:9",
+      "to": "bb1:a18",
+      "color": "#e8a33d",
+      "bends": [
+        {
+          "x": -340,
+          "y": -80
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "from": "mega25602:8",
+      "to": "bb1:a22",
+      "color": "#1f9d55",
+      "bends": [
+        {
+          "x": -380,
+          "y": -60
+        },
+        {
+          "x": -380,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "from": "led2:C",
+      "to": "bb1:tp10",
+      "color": "#7a8290",
+      "bends": [
+        {
+          "x": 80,
+          "y": -200
+        }
+      ]
+    },
+    {
+      "id": "w5",
+      "from": "led3:C",
+      "to": "bb1:tp15",
+      "color": "#7a8290",
+      "bends": [
+        {
+          "x": 80,
+          "y": -80
+        }
+      ]
+    },
+    {
+      "id": "w6",
+      "from": "led1:C",
+      "to": "bb1:tp18",
+      "color": "#7a8290",
+      "bends": [
+        {
+          "x": 80,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "w7",
+      "from": "mega25602:GNDb",
+      "to": "bb1:tp25",
+      "color": "#7a8290",
+      "bends": [
+        {
+          "x": -980,
+          "y": -160
+        },
+        {
+          "x": -980,
+          "y": 540
+        },
+        {
+          "x": 100,
+          "y": 540
+        }
+      ]
+    }
+  ],
+  "projects": {
+    "*": {
+      "files": {
+        "sketch.ino": "// Mokxi.\n// This circuit has no board, so Run simulates the parts only.\n// Add a board and pick a program in its Firmware panel: the editor then shows\n// that program's source, and Run builds what you type here for that board.\n\nvoid setup() {\n  pinMode(13, OUTPUT);\n  Serial.begin(115200);\n}\n\nvoid loop() {\n  digitalWrite(13, HIGH);\n  delay(500);\n  digitalWrite(13, LOW);\n  delay(500);\n}\n"
+      },
+      "main": "sketch.ino"
+    },
+    "mega25602": {
+      "files": {
+        "semaforo.h": "int rojo = 10;\nint amarillo = 9;\nint verde = 8;\n\nvoid setup() {\n  pinMode(rojo, OUTPUT);\n  pinMode(amarillo, OUTPUT);\n  pinMode(verde, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(verde, HIGH);\n  delay(5000);\n  digitalWrite(verde, LOW);\n\n  digitalWrite(amarillo, HIGH);\n  delay(2000);\n  digitalWrite(amarillo, LOW);\n\n  digitalWrite(rojo, HIGH);\n  delay(5000);\n  digitalWrite(rojo, LOW);\n}\n"
+      },
+      "main": "semaforo.h"
+    }
+  }
+}
